@@ -63,4 +63,4 @@ Implementing equals() and hashCode() method for the leakage
 
 ### Spring Data JPA: database operations
 
-Set up repo as interface: `CrudRepository<type, id_type>` provides the implementation of methods for db operation.
+Set up repo by building an interface which includes the implementation: `CrudRepository<type, id_type>` provides the implementation of methods for db operation.
