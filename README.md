@@ -35,7 +35,7 @@ Metadata:
 
 ## [JPA](https://blog.csdn.net/weixin_45764765/article/details/107755857?ops_request_misc=&request_id=&biz_id=102&utm_term=leakage%20JPA%20JAva&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-2-107755857.142^v72^pc_new_rank,201^v4^add_ask&spm=1018.2226.3001.4187): Java Presistence API
 ### JPA Model: 
-ORM - object-relational mapping based on Hibernate. JPA is used with relational databases and NoSQL datastores.
+`ORM` - object-relational model mapping based on Hibernate. JPA is used with relational databases and NoSQL datastores.
 ### [Creating POJOS](https://www.geeksforgeeks.org/pojo-vs-java-beans/)
 a plain old Java object is an ordinary Java object, not bound by any special restriction. 
 - Add a `package` in `SpringFramework.Web1` and name it as `domain`
@@ -53,4 +53,14 @@ To make it official JPA entity:
 - `@ManyToMany(mappedBy = "")` indicating the relationship between author and books
 - `@JoinTable()` the table that holds relationship btn author and books. More [details](https://docs.oracle.com/javaee/7/api/javax/persistence/JoinTable.html)
 
+## Work with Hibernate
+### Equality
+`Question: leakage between Object and relational models`
 
+Implementing equals() and hashCode() method for the leakage
+- base equality on the `Id` of objects
+- rewrite the methods. Hibernate and set will consider as same object iff two objects has same ID. 
+
+### Spring Data JPA: database operations
+
+Set up repo as interface: `CrudRepository<type, id_type>` provides the implementation of methods for db operation.
