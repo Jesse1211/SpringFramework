@@ -89,8 +89,13 @@ design pattern for GUI and Web Applications
 - Controller: Java class implemented to handle requesting mapping. Works in cojunction with a service (operations) which contains business logic. 
   
 ### Spring MVC:
-<object data="springMVC.pdf" type="application/pdf" width="700px" height="700px">
-    <!-- <embed src="http://yoursite.com/the.pdf">
-    </embed> -->
-</object>
-??
+check `springMVC.pdf`
+
+- Spring Controllers `\Controllers\BookController`:
+  - Annotate Controller Class with `@Controller`: registeres class as a Spring Brean and as a Controller in Spring MVC
+  - To map mathods to http req paths by `@RequestMapping` to return data to `View`
+- View: by [Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html#introducing-thymeleaf) Templates
+  - add thyeleaf in configuration
+  - command examples: `xmlns:th="http://www.thymeleaf.org"`, `th:each`, `th:text `
+  - url: `http://localhost:8080/books`
+  
