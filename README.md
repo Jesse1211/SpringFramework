@@ -81,3 +81,16 @@ Url: localhost:8080 (port can be found in console output when running the progra
 - Then output console will print `H2 console available at '/h2-console'. Database available at`*<JDBC URL for location of database in menory>*
 - Browse `http://localhost:8080/h2-console/` for login page. And make sure the JDBC URL matches. 
 - Then able to modify & visualize database. 
+
+## MVC: Model View Controller
+design pattern for GUI and Web Applications
+- Model: POJO with collection of properties
+- View: JSP, Thymeleaf or HTML..
+- Controller: Java class implemented to handle requesting mapping. Works in cojunction with a service (operations) which contains business logic. 
+  
+### Spring MVC:
+<object data="springMVC.pdf" type="application/pdf" width="700px" height="700px">
+    <!-- <embed src="http://yoursite.com/the.pdf">
+    </embed> -->
+</object>
+??
