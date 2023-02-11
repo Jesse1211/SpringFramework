@@ -57,10 +57,19 @@ To make it official JPA entity:
 ### Equality
 `Question: leakage between Object and relational models`
 
-Implementing equals() and hashCode() method for the leakage
-- base equality on the `Id` of objects
+Implementing `equals()` and `hashCode()` method for the leakage
+- base equality on the `Id` as the object equality.
 - rewrite the methods. Hibernate and set will consider as same object iff two objects has same ID. 
 
 ### Spring Data JPA: database operations
+- Works with Hibernate. 
+- Set up repo by building an interface which includes the implementation: `CrudRepository<type = Author, id_value = Long>`. It gives the implementation of methods (commands) for db operation.
 
-Set up repo by building an interface which includes the implementation: `CrudRepository<type, id_type>` provides the implementation of methods for db operation.
+## Initializing data
+bootstrap
+- in BootStrapData by `CommandLineRunner`
+- `@Component`: set as a spring managed component
+- `dependency injection` the instances into constructor
+- `run()`: set up information for author and book, and add in a book to the author, and author to the book by removing the constructor
+- details for setting and saving data: see inside the file
+- 
