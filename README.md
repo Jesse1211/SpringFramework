@@ -74,3 +74,10 @@ bootstrap
 - details for setting and saving data: see inside the file
 - *`publisherRepository.save(publisher);` It MUST be the last one to save. `WHY???`*
 - *Hibernate generates SQL DDL statement for creating database tables and inserting data based on JPA definition - defined below*
+
+## Utilize H2 database console
+Url: localhost:8080 (port can be found in console output when running the program)
+- in `application.properties`: set `spring.h2.console.enabled=true`. 
+- Then output console will print `H2 console available at '/h2-console'. Database available at`*<JDBC URL for location of database in menory>*
+- Browse `http://localhost:8080/h2-console/` for login page. And make sure the JDBC URL matches. 
+- Then able to modify & visualize database. 
