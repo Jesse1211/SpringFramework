@@ -2,20 +2,27 @@ package SpringFramework.Web1.Domain;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
+
+/**
+ * Created by jt on 12/22/19.
+ */
 @Entity
 public class Book {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long Id;
+    private Long id;
+
     private String title;
     private String isbn;
+
+    @ManyToOne
+    private Publisher publisher;
+
     @ManyToMany
-    @JoinTable(name = "author_book",
-            joinColumns = @JoinColumn(name = "book_id"),
+    @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "author_id"))
-    // set up property of join table: the table that holds relationship btn
     private Set<Author> authors = new HashSet<>();
 
     public Book() {
@@ -24,15 +31,22 @@ public class Book {
     public Book(String title, String isbn) {
         this.title = title;
         this.isbn = isbn;
-//        this.authors = authors;
     }
 
-    public void setId(Long id) {
-        Id = id;
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 
     public Long getId() {
-        return Id;
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -62,7 +76,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "Id=" + Id +
+                "id=" + id +
                 ", title='" + title + '\'' +
                 ", isbn='" + isbn + '\'' +
                 ", authors=" + authors +
@@ -76,11 +90,107 @@ public class Book {
 
         Book book = (Book) o;
 
-        return Objects.equals(Id, book.Id);
+        return id != null ? id.equals(book.id) : book.id == null;
     }
 
     @Override
     public int hashCode() {
-        return Id != null ? Id.hashCode() : 0;
+        return id != null ? id.hashCode() : 0;
     }
 }
+
+//import java.util.HashSet;
+//import java.util.Objects;
+//import java.util.Set;
+//@Entity
+//public class Book {
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Long Id;
+//    private String title;
+//    private String isbn;
+//
+//    @ManyToOne
+//    private Publisher publisher;
+//
+//    @ManyToMany
+//    @JoinTable(name = "author_book",
+//            joinColumns = @JoinColumn(name = "book_id"),
+//            inverseJoinColumns = @JoinColumn(name = "author_id"))
+//    // set up property of join table: the table that holds relationship btn
+//    private Set<Author> authors = new HashSet<>();
+//
+//    public Book() {
+//    }
+//
+//    public Book(String title, String isbn) {
+//        this.title = title;
+//        this.isbn = isbn;
+////        this.authors = authors;
+//    }
+//
+//    public Publisher getPublisher() {
+//        return publisher;
+//    }
+//
+//    public void setPublisher(Publisher publisher) {
+//        this.publisher = publisher;
+//    }
+//
+//    public void setId(Long id) {
+//        Id = id;
+//    }
+//
+//    public Long getId() {
+//        return Id;
+//    }
+//
+//    public String getTitle() {
+//        return title;
+//    }
+//
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
+//
+//    public String getIsbn() {
+//        return isbn;
+//    }
+//
+//    public void setIsbn(String isbn) {
+//        this.isbn = isbn;
+//    }
+//
+//    public Set<Author> getAuthors() {
+//        return authors;
+//    }
+//
+//    public void setAuthors(Set<Author> authors) {
+//        this.authors = authors;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Book{" +
+//                "Id=" + Id +
+//                ", title='" + title + '\'' +
+//                ", isbn='" + isbn + '\'' +
+//                ", authors=" + authors +
+//                '}';
+//    }
+//
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//
+//        Book book = (Book) o;
+//
+//        return Objects.equals(Id, book.Id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Id != null ? Id.hashCode() : 0;
+//    }
+//}

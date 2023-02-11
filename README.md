@@ -65,11 +65,12 @@ Implementing `equals()` and `hashCode()` method for the leakage
 - Works with Hibernate. 
 - Set up repo by building an interface which includes the implementation: `CrudRepository<type = Author, id_value = Long>`. It gives the implementation of methods (commands) for db operation.
 
-## Initializing data
+## Initializing data & creating entities
 bootstrap
 - in BootStrapData by `CommandLineRunner`
 - `@Component`: set as a spring managed component
 - `dependency injection` the instances into constructor
 - `run()`: set up information for author and book, and add in a book to the author, and author to the book by removing the constructor
 - details for setting and saving data: see inside the file
-- 
+- *`publisherRepository.save(publisher);` It MUST be the last one to save. `WHY???`*
+- *Hibernate generates SQL DDL statement for creating database tables and inserting data based on JPA definition - defined below*
