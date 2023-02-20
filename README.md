@@ -99,4 +99,14 @@ check `springMVC.pdf`
   - command examples: `xmlns:th="http://www.thymeleaf.org"`, `th:each`, `th:text `
   - url: `http://localhost:8080/books`
   
-## Dependency Conjection & Inversion Control
+
+## Dependency Conjection & Inversion Control in OOP
+### SOLID Principles of OOP:
+- S: Single Responsibility Principle
+- O: Open CLosed Principle
+- L: Liskov Substitution Principle
+- I: Interface Segregation Principle
+- D: Dependency Inversion Principle
+
+### Next Project for better understanding of dependency injection:
+
