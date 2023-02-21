@@ -108,19 +108,24 @@ check `springMVC.pdf`
 - I: Interface Segregation Principle
 - D: Dependency Inversion Principle
 
+### Inversion of Control loC: 
+the runtime environment of the code
+- The control of DI is inverted to the framework
+- Spring is in control of the injection of dependencies
+
 ### Dependency Injection DI:
 The composition of the classes
 
 - Let Framework do the management: No need to create a Controller Object, it's done by SpringFramework instead of SpringContexts. SpringFramework creates a new instance of the controller class, and put it into the context. Spring manages the construction of the controller, we just need to ask Spring to provide the object. 
 - Dependency Injection is where a needed dependency is injected by another object. 
 - Be pragmatic in what is and is not being managed in the Spring Context
-- Types:
-  - By class properties
-  - By Setters
-  - By Constructor
+- Types (through Junit test without spring):
+  - By class properties: `/test/../PropertyIjectedControllerTest.java`
+  - By Setters: `/text/../SetterInjectorCOntroller`
+  - By Constructor: *best*
+    - `private final` in controller: unable to change object if inside the object code
+    - `/text/../ConstructorInjectedController`:
+      - `controller = new ConstructorInjectedController(new GreetingServiceImp())`: creating a new constructor injected a controller and also at the same time creating that greeting service.
 - Better using with interfaces rather than concrete class
 
-### Inversion of Control loC: 
-the runtime environment of the code
-- The control of DI is inverted to the framework
-- Spring is in control of the injection of dependencies
+
