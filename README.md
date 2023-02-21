@@ -100,7 +100,7 @@ check `springMVC.pdf`
   - url: `http://localhost:8080/books`
   
 
-## Dependency Conjection & Inversion Control in OOP
+## Dependency Injection & Inversion Control in OOP
 ### SOLID Principles of OOP:
 - S: Single Responsibility Principle
 - O: Open CLosed Principle
@@ -108,5 +108,19 @@ check `springMVC.pdf`
 - I: Interface Segregation Principle
 - D: Dependency Inversion Principle
 
-### Next Project for better understanding of dependency injection:
+### Dependency Injection DI:
+The composition of the classes
 
+- Let Framework do the management: No need to create a Controller Object, it's done by SpringFramework instead of SpringContexts. SpringFramework creates a new instance of the controller class, and put it into the context. Spring manages the construction of the controller, we just need to ask Spring to provide the object. 
+- Dependency Injection is where a needed dependency is injected by another object. 
+- Be pragmatic in what is and is not being managed in the Spring Context
+- Types:
+  - By class properties
+  - By Setters
+  - By Constructor
+- Better using with interfaces rather than concrete class
+
+### Inversion of Control loC: 
+the runtime environment of the code
+- The control of DI is inverted to the framework
+- Spring is in control of the injection of dependencies
