@@ -35,29 +35,25 @@ Metadata:
 
 ## [JPA](https://blog.csdn.net/weixin_45764765/article/details/107755857?ops_request_misc=&request_id=&biz_id=102&utm_term=leakage%20JPA%20JAva&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-2-107755857.142^v72^pc_new_rank,201^v4^add_ask&spm=1018.2226.3001.4187): Java Presistence API
 ### JPA Model: 
-`ORM` - object-relational model mapping based on Hibernate. JPA is used with relational databases and NoSQL datastores.
-### [Creating POJOS](https://www.geeksforgeeks.org/pojo-vs-java-beans/)
-a plain old Java object is an ordinary Java object, not bound by any special restriction. 
-- Add a `package` in `SpringFramework.Web1` and name it as `domain`
-- Add classes `Author.java` and `Book.java` for two POJOs
+JPA is used with relational databases and NoSQL datastores
+### [Creating POJO](https://www.geeksforgeeks.org/pojo-vs-java-beans/)
+Plain Ordinary Java Object is an ordinary Java object - Java Beans, not bound by any special restriction. 
+- two POJOs: `Author.java` and `Book.java`
 - e.g. the model contains: firstName, lastName, Books. These are the objects that will we will be persisting into database with JPA. 
-### JPA Id's
-Add ID value for each object to make as JPA entities. Then JPA can store & retrive data from database by the entities (ID)(leakage).
-
+### `ORM` 实体关系映射 - Object-Relational model Mapping based on Hibernate. 
 To make it official JPA entity:
-- Add `@Entity` notation which requires a primiary key - ID
-- Add variable `id` and `@Id` to indicate its the primiary key
-- Add `@GeneratedValue(strategy = GenerationType.AUTO)` for how the primiary key is generated: Automatically ID generation. Which means the value of primiary key is assigned/managed by database. 
-- 
+- `@Entity` = Table: requires a primiary key - ID
+- `@Id` = primary key: Add ID value for each object to make as JPA entities. Then JPA can store & retrive data from database by the entities (ID)(leakage).
+- `@GeneratedValue(strategy = GenerationType.AUTO)`: Automatically ID generation.
 ### JPA Relationships: n : n
+- one-to-one, one-to-many, many-to-one, many-to-many.
 - `@ManyToMany(mappedBy = "")` indicating the relationship between author and books
 - `@JoinTable()` the table that holds relationship btn author and books. More [details](https://docs.oracle.com/javaee/7/api/javax/persistence/JoinTable.html)
 
-## Work with Hibernate
+## Hibernate: 
+一个轻量级的ORM框架, 它将 pojo 与数据库表建立映射关系.
 ### Equality
-`Question: leakage between Object and relational models`
-
-Implementing `equals()` and `hashCode()` method for the leakage
+``Question: leakage between Object and relational models: Solve by implementing `equals()` and `hashCode()` method for the leakage``
 - base equality on the `Id` as the object equality.
 - rewrite the methods. Hibernate and set will consider as same object iff two objects has same ID. 
 
@@ -127,5 +123,26 @@ The composition of the classes
     - `/text/../ConstructorInjectedController`:
       - `controller = new ConstructorInjectedController(new GreetingServiceImp())`: creating a new constructor injected a controller and also at the same time creating that greeting service.
 - Better using with interfaces rather than concrete class
+
+
+- Controller selects one bean over multiple beans (class, setter, constructor services) for DI (多类型冲突):
+  - Qualifier: `@Qualifier("beanName")` with `@Service("beanName")`
+  - Primary Beans: `Primary`
+
+- Spring Profiles: `I18nController` and `I18nEnglishGreetingService`
+  - Different characteristics in beans which in configuration (data source). Two beans with different characteristics, they have same @Service("BeanName"), then distinguish them by @Profile("feature") -> controling Spring context among beans which to be loaded into the context at runtime
+  - Allows to control Spring application in difference runtime environments
+  - Run a profile for MySQL: controlling MySQL beans with a profile
+  - `@Profile("beanName")`
+  - `spring.profiles.active = beanName`
+  - default profile (no active profiles enabled): `@Profile("", "default")`. Lower priority than active profiles
+
+### Spring beans
+life cycle : https://blog.csdn.net/keepfriend/article/details/121281051?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168031147516800215054378%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=168031147516800215054378&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-121281051-null-null.142^v80^pc_new_rank,201^v4^add_ask,239^v2^insert_chatgpt&utm_term=spring%20bean&spm=1018.2226.3001.4187
+
+
+### simple Project - Joke generator:
+- `../spring5-jokes-app`
+- Costume banner: http://patorjk.com/software/taag/#p=display&f=Big&t=This%20is%20Jesse
 
 
