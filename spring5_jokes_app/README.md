@@ -2,9 +2,7 @@
 
 Spring MVC Chuck Norris Jokes App.
 
-This repository contains code to support my online courses. Learn more using the links below!
-
-You can learn more about the courses here:
+Run project in port localhost:8080
 
 * [Spring Security Core: Beginner to Guru](https://www.udemy.com/course/spring-security-core-beginner-to-guru/?referralCode=306F288EB78688C0F3BC)
 * [Spring Boot Microservices with Spring Cloud](https://www.udemy.com/course/spring-boot-microservices-with-spring-cloud-beginner-to-guru/?referralCode=6142D427AE53031FEF38)
