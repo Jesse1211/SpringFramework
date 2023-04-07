@@ -9,17 +9,8 @@
 
 `gradle --version`
 
-## Spring Initializr: 
-
-It forms (generates) a project
-
-###	Spring Boot Starters: 
-A curated set of dependencies, given a konwn component with listed needed dependencies. => include one component == include multiple dependencies
-
-### start.spring.io:
-Web front end on Spring Initializr to view and select components
-
 ### Create Web Project
+Start: start.spring.io
 
 Definition: Maven Project + Java 17 + SpringBoot 3.0.2
 
@@ -146,3 +137,13 @@ life cycle : https://blog.csdn.net/keepfriend/article/details/121281051?ops_requ
 - Costume banner: http://patorjk.com/software/taag/#p=display&f=Big&t=This%20is%20Jesse
 
 
+## Spring Pet Clinc
+- database oriented application
+- database: H2 (mySQL)
+- 3 bean profiles
+- caching: setting up configuring 
+- Unit Testing: JUint5
+- Info:
+  - Maven, Java 17, SpringBoot 3.0.5
+- Dependencies:
+  - DevTools, Lombok, Spring Web, Thymeleaf, SPring Data JPA, H2 Database, MySQL Driver, SPring Boot Actuator
