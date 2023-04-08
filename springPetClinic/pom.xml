@@ -53,7 +53,7 @@
 	</build>
 
 	<scm>
-		<developerConnection>scm:git:git@github.com:Jesse1211/SpringFramework/tree/main/springPetClinic.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:Jesse1211/SpringFramework.git</developerConnection>
 	  <tag>0.0.3</tag>
   </scm>
 
