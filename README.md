@@ -147,3 +147,6 @@ life cycle : https://blog.csdn.net/keepfriend/article/details/121281051?ops_requ
   - Maven, Java 17, SpringBoot 3.0.5
 - Dependencies:
   - DevTools, Lombok, Spring Web, Thymeleaf, SPring Data JPA, H2 Database, MySQL Driver, SPring Boot Actuator
+
+1. Multi-Module Maven Setting up: data and web https://github.com/springframeworkguru/sfg-pet-clinic/tree/f3d1285f74513973c5a44a4a88e1555314743613 
+2. Maven release Plugin
