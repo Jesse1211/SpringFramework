@@ -16,7 +16,7 @@
 
 	<groupId>springFramework</groupId>
 	<artifactId>springPetClinic</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.3</version>
 	<name>springPetClinic</name>
 
 	<description>Demo project for Spring Boot</description>
@@ -42,7 +42,17 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+<!--				<version>3.2.0</version>-->
+				<configuration><goal>install</goal></configuration>
+			</plugin>
 		</plugins>
 	</build>
+
+	<scm>
+		<developerConnection>scm</developerConnection>
+	</scm>
 
 </project>
