@@ -6,7 +6,9 @@ import springFramework.springPetClinic.services.ICrud;
 import java.util.Set;
 
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements ICrud<Owner, Long> {
-
+    /**
+    * super.method(): use methods in AbstractMapService
+    * */
     @Override
     public Set<Owner> findAll() {
         return super.findAll();

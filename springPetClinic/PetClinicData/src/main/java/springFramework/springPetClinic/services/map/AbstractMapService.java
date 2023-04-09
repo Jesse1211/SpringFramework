@@ -5,6 +5,13 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+Store data into a hash map:
+A Java abstract class is a class which cannot be instantiated,
+meaning you cannot create new instances of an abstract class.
+The purpose of an abstract class is to function as a base for subclasses.
+ */
+
 public abstract class AbstractMapService<T, ID> {
 
     protected Map<ID, T> map = new HashMap<>();

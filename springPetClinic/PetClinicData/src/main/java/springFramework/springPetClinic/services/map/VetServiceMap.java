@@ -6,7 +6,6 @@ import springFramework.springPetClinic.services.ICrud;
 import java.util.Set;
 
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements ICrud<Vet, Long> {
-
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
