@@ -1,11 +1,13 @@
 package springFramework.springPetClinic.services.map;
 
+import org.springframework.stereotype.Service;
 import springFramework.springPetClinic.model.Owner;
 import springFramework.springPetClinic.services.ICrud;
 import springFramework.springPetClinic.services.IOwner;
 
 import java.util.Set;
 
+@Service // OwnerServiceMap takes care of IOwner
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements IOwner {
     /**
     * super.method(): use methods in AbstractMapService
