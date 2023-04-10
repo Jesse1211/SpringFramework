@@ -18,14 +18,11 @@ public class DataLoader implements CommandLineRunner {
     private final IOwner ownerService;
     private final IVet vetService;
 
-    public DataLoader() { // need to refactor {Owner}ServiceMap implements to I{Owner}
-        /**
-         * initialize inside constructor (not DI)
-         ownerService = new OwnerServiceMap();
-         vetService = new VetServiceMap();
-         */
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    // DI
+    public DataLoader(IOwner ownerService, IVet vetService) {
+        // Spring sees IOwner, it will scan OwnerServiceMap due to @Service
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     // Load data:
