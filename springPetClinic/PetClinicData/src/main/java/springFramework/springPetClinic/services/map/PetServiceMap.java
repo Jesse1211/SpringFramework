@@ -2,10 +2,11 @@ package springFramework.springPetClinic.services.map;
 
 import springFramework.springPetClinic.model.Pet;
 import springFramework.springPetClinic.services.ICrud;
+import springFramework.springPetClinic.services.IPet;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements ICrud<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements IPet {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();

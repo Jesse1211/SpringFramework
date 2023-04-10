@@ -2,10 +2,11 @@ package springFramework.springPetClinic.services.map;
 
 import springFramework.springPetClinic.model.Vet;
 import springFramework.springPetClinic.services.ICrud;
+import springFramework.springPetClinic.services.IVet;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements ICrud<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements IVet {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
