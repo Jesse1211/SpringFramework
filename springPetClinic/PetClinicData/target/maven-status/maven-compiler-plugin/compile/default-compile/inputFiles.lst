@@ -1,0 +1,14 @@
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/model/BaseEntity.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/services/IOwner.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/services/IVet.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/services/map/PetServiceMap.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/services/map/AbstractMapService.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/model/Vet.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/services/ICrud.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/model/Pet.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/services/map/VetServiceMap.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/model/Owner.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/model/PetType.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/services/map/OwnerServiceMap.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/model/Person.java
+/Users/liuzhenhua/Desktop/SpringFramework/springPetClinic/PetClinicData/src/main/java/springFramework/springPetClinic/services/IPet.java
