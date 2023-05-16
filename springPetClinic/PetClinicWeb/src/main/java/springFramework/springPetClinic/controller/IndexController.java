@@ -12,7 +12,7 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping("/ops")
+    @RequestMapping("/oups")
     public String opsHandler(){
         return "notImplemented";
     }
